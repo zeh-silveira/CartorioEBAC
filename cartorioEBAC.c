@@ -1,6 +1,6 @@
-#include <stdio.h> //biblioteca de comunicação com o usuário
-#include <stdlib.h> //biblioteca de alocação de espaço de memória
-#include <locale.h> //biblioteca de alocação de texto por região
+#include <stdio.h> //biblioteca de comunicaÃ§Ã£o com o usuÃ¡rio
+#include <stdlib.h> //biblioteca de alocaÃ§Ã£o de espaÃ§o de memÃ³ria
+#include <locale.h> //biblioteca de alocaÃ§Ã£o de texto por regiÃ£o
 #include <string.h> //biblioteca das strings
 
 int registrar()
@@ -14,8 +14,8 @@ int registrar()
 	char arquivo[40];
 	
 	printf("-----Registro de novos cadastros-----\n\n");
-	printf("ATENÇÃO: para fins de padronização de informações, ao cadastrar, não utilizar caracteres especiais!!!\n");
-	printf("\t\t\t\t\t\t   ¯¯¯\n");
+	printf("ATENÃ‡ÃƒO: para fins de padronizaÃ§Ã£o de informaÃ§Ãµes, ao cadastrar, nÃ£o utilizar caracteres especiais!!!\n");
+	printf("\t\t\t\t\t\t   Â¯Â¯Â¯\n");
 	printf("Digite o CPF a ser cadastrado:\n\n");
 	scanf("%s", cpf);
 	
@@ -66,7 +66,7 @@ int consultar()
 	char conteudo[400];
 	
 	printf("-----Consulta de cadastros-----\n\n");
-	printf("Digite o CPF (somente os números) a ser consultado:\n\n");
+	printf("Digite o CPF (somente os nÃºmeros) a ser consultado:\n\n");
 	scanf("%s", cpf);
 	printf("\n");
 	
@@ -78,12 +78,12 @@ int consultar()
 	
 	if(file == NULL)
 	{
-		printf("CPF não localizado no sitema.\n\n");
+		printf("CPF nÃ£o localizado no sitema.\n\n");
 	}
 	
 	while(fgets(conteudo, 400, file) !=NULL)
 	{
-		printf("Essas são as informações do usuário (CPF, nome e cargo):\n\n");
+		printf("Essas sÃ£o as informaÃ§Ãµes do usuÃ¡rio (CPF, nome e cargo):\n\n");
 		printf("%s", conteudo);
 		printf("\n\n");
 	}
@@ -98,8 +98,8 @@ int deletar()
 	
 	char cpf[40];
 	
-	printf("-----Exclusão de cadastros-----\n\n");
-	printf("Digite o CPF (somente os números) a ser excluído:\n\n");
+	printf("-----ExclusÃ£o de cadastros-----\n\n");
+	printf("Digite o CPF (somente os nÃºmeros) a ser excluÃ­do:\n\n");
 	scanf("%s", cpf);
 	
 	FILE *file;
@@ -108,13 +108,13 @@ int deletar()
 	
 	if(file == NULL)
 	{
-		printf("\nCPF não localizado no sistema.\n\n");
+		printf("\nCPF nÃ£o localizado no sistema.\n\n");
 		system("pause");
 	}
 	else
 	{
 		remove(cpf);
-		printf("\nCPF excluído do sistema.\n\n");
+		printf("\nCPF excluÃ­do do sistema.\n\n");
 		system("pause");
 	}	
 }
@@ -130,13 +130,12 @@ int main()
 	{
 	 	system("cls");
 	 	
-		printf("-----Cartório da EBAC-----\n\n");
-		printf("Escolha a opção desejada; pressione Enter para seguir.\n\n");
+		printf("-----CartÃ³rio da EBAC-----\n\n");
+		printf("Escolha a opÃ§Ã£o desejada; pressione Enter para seguir.\n\n");
 		printf("\t1 - Registrar novos cadastros\n");
 		printf("\t2 - Consultar cadastros\n");
 		printf("\t3 - Excluir cadastros\n");
-		printf("\t4 - Sair do sistema\n\n");
-		printf("Opção: ");
+		printf("OpÃ§Ã£o: ");
 		scanf("%d", &opcao);
 		
 		system("cls");
@@ -155,14 +154,8 @@ int main()
 			deletar();
 			break;
 			
-			case 4:
-			printf("-----Sair do sistema-----\n\n");
-			printf("Obrigado por utilizar o software.");
-			return 0;
-			break;
-			
 			default:
-			printf("Opção inválida, gentileza escolher entre 1, 2 ou 3.\n\n");
+			printf("OpÃ§Ã£o invÃ¡lida, gentileza escolher entre 1, 2 ou 3.\n\n");
 			system("pause");
 			break;	
 		}
